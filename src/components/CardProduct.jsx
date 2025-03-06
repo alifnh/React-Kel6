@@ -13,7 +13,7 @@ const CardProduct = (props) => {
                     style={{
                     width: 240,
                     }}
-                    cover={<img alt="example" src={image} />}
+                    cover={<img alt="" src={image}/>}
                 >
                     <Meta title={title} description={`Rp. ${price}`} />
                 </Card>
