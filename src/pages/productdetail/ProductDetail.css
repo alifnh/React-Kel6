@@ -69,3 +69,10 @@
     list-style-type: disc;
     padding-left: 20px;
 }
+body {
+    background: linear-gradient(to right, #ffffff, #9fc7ee);
+}
+
+.cart-button.remove {
+    background-color: #dc3545; /* Warna merah */
+}
