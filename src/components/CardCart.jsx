@@ -17,7 +17,7 @@ export const CardCart = (props) => {
     //   extra={<a href="#">More</a>}
     >
     
-      <img style={{width:'100px'}} src={image} alt="" />
+      <img style={{width:'100px',  display: `flex`}} src={image} alt="" />
       <InputNumber
       defaultValue={quantity}
     />

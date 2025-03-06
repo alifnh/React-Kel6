@@ -10,10 +10,14 @@ export const CartItem = () => {
   const [cart, setCart] = useState(null);
   const userId = localStorage.getItem("userId")
 
-
   const fetchCartData = async () => {
       try {
         const response = await axios.get(`http://10.50.0.13:3006/cart?userId${userId}`);
+      //   response.data.forEach((item, index) => {
+      //    const product = getProductData(item.productId)
+      //     response.data[index]['product'] = product
+      // })
+
         setCart(response.data); 
       } catch (error) {
         console.error(error);
@@ -27,7 +31,7 @@ export const CartItem = () => {
   const getProductData = async (id) => {
     try {
       const response = await axios.get(`http://10.50.0.13:3006/products/${id}`);
-      return response.data.name;
+      return response.data;
     }
     catch (error) {
       console.error(error);
@@ -42,8 +46,9 @@ export const CartItem = () => {
       {cart == null ? (
         <p>Data sedang dimuat</p>
       ) : (
-        cart.map((item, index) =>
-        <CardCart key={index} quantity={item.quantity} name={"Product"} />
+        cart.map((item, index) => 
+        <CardCart key={index} quantity={item.quantity} name={"Product"} image={"https://down-id.img.susercontent.com/file/c70c4666582f977ccd170cea844abe2e"}/>
+        
       )
       )}
     </Card>
