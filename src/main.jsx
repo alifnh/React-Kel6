@@ -4,13 +4,14 @@ import './global.css'
 import App from './App.jsx'
 import { BrowserRouter, Route, Routes } from 'react-router'
 import { AppProvider } from './context/AppContext.jsx'
+import Home from './pages/Home.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <AppProvider>
     <BrowserRouter>
         <Routes>
-          <Route path="/" element={<App />} />
+          <Route path="/" element={<Home />} />
         </Routes>
     </BrowserRouter>
     </AppProvider>
