@@ -12,6 +12,8 @@ import { Toaster } from 'react-hot-toast'
 
 import Home from './pages/Home.jsx'
 import ProductDetail from './pages/productdetail/ProductDetail.jsx'
+import TambahProduct from './pages/addproduct/TambahProduct.jsx'
+import EditProduct from './pages/editproduct/EditProduct.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -25,6 +27,8 @@ createRoot(document.getElementById('root')).render(
           <Route path='/register' element={<Register />} />
           <Route path="/" element={<Home />} />
           <Route path="/product/:id" element={<ProductDetail/>} />
+          <Route path="/product/create" element={<TambahProduct/>}/>
+          <Route path="/product/edit/:id" element={<EditProduct />}/>
         </Routes>
     </BrowserRouter>
     </AppProvider>
