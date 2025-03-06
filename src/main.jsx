@@ -4,6 +4,7 @@ import './global.css'
 import App from './App.jsx'
 import { BrowserRouter, Route, Routes } from 'react-router'
 import { AppProvider } from './context/AppContext.jsx'
+import { CartItem } from './CartItem.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -11,6 +12,7 @@ createRoot(document.getElementById('root')).render(
     <BrowserRouter>
         <Routes>
           <Route path="/" element={<App />} />
+          <Route path="cartitem" element={<CartItem />} />
         </Routes>
     </BrowserRouter>
     </AppProvider>
