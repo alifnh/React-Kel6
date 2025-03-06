@@ -5,10 +5,13 @@ import { useNavigate } from 'react-router'
 import axios from 'axios'
 import toast from 'react-hot-toast';
 import logo from '../assets/tokopdi.png'
+import { useAuth } from '../context/AppContext';
 
 
 function Register() {
     const navigate = useNavigate()
+    const { login } = useAuth(); // Ambil function login dari Context
+    
     const onFinish = async (values) => {
         
         event.preventDefault() // cegah refresh page 
@@ -20,6 +23,7 @@ function Register() {
                 password: values.password,
                 role: values.role
             })
+            login(data.data.user)
             localStorage.setItem("accessToken", data.data.accessToken)
             toast.success("Register successful!");
             navigate('/');

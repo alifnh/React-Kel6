@@ -5,10 +5,12 @@ import { useNavigate } from 'react-router'
 import axios from 'axios'
 import toast from 'react-hot-toast';
 import logo from '../assets/tokopdi.png'
+import { useAuth } from '../context/AppContext';
 
 
 function Login() {
     const navigate = useNavigate()
+    const { login } = useAuth(); // Ambil function login dari Context
     const onFinish = async (values) => {
 
         event.preventDefault() // cegah refresh page 
@@ -20,18 +22,13 @@ function Login() {
                 password: values.password
             })
 
-
-
             if (!data.data.user) {
                 throw new Error("User not found");
-            }
-
-            if (data.data.user.role === "admin") {
+            } else {
+                login(data.data.user)
                 localStorage.setItem("accessToken", data.data.accessToken)
                 toast.success("Login successful!");
                 navigate('/');
-            } else {
-                throw new Error("Your role not authorized!");
             }
 
         } catch (error) {
