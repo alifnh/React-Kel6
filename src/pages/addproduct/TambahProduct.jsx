@@ -4,6 +4,7 @@ import { UploadOutlined } from '@ant-design/icons';
 import axios from 'axios';
 import toast from 'react-hot-toast';
 import { useAuth } from '../../context/AppContext';
+import Header from '../../components/header/Header';
 
 const { Option } = Select;
 
@@ -40,7 +41,9 @@ function TambahProduct() {
   };
 
   return (
-    <div>
+    
+    <>
+      <Header />
       <h2>Tambah Produk</h2>
       <Form layout="vertical" onFinish={onFinish} initialValues={{ categoryId: categories[0]?.id }}>
         <Form.Item label="Nama Produk" name="name" rules={[{ required: true, message: 'Nama produk wajib diisi!' }]}> 
@@ -77,7 +80,7 @@ function TambahProduct() {
           </Button>
         </Form.Item>
       </Form>
-    </div>
+    </>
   );
 }
 
