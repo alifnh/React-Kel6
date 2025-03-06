@@ -6,6 +6,7 @@ import { useParams } from 'react-router';
 
 const ProductDetail = () => {
   const [productData, setProductData] = useState()
+  const [inCart, setInCart] = useState(false); // NEW: Tambahkan state inCart
   const params = useParams()
 
   const fetchProductData = async () => {
@@ -23,6 +24,10 @@ const ProductDetail = () => {
     fetchProductData()
   }, [])
 
+  const handleCartClick = () => {
+    setInCart(!inCart); // Toggle state
+  };
+
   return (
     <>
       <Header />
@@ -39,7 +44,12 @@ const ProductDetail = () => {
           <h1 className="product-title">{productData.name}</h1>
           <p className="product-price">{productData.price}</p>
           <div className="button-group">
-            <button className="button add-to-cart">Add to Cart</button>
+          <button 
+                className={`button cart-button ${inCart ? "remove" : "add"}`} 
+                onClick={handleCartClick} // NEW: Tambahkan event onClick
+              >
+                {inCart ? "Remove from Cart" : "Add to Cart"} {/* NEW: Ubah teks tombol */}
+              </button>
             <button className="button buy-now">Buy it Now</button>
           </div>
           <h2 className="product-description-title">About the product</h2>
