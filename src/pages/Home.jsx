@@ -8,6 +8,7 @@ const Home = () => {
 
     const fetchData = async (link = 'http://10.50.0.13:3006/products') => {
         try {
+            console.log(link)
             const data = await axios.get(link)
             setProducts(data.data);
         } catch (error) {
