@@ -3,6 +3,7 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import { Link } from 'react-router'
+import CardProduct from './components/CardProduct'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -31,6 +32,7 @@ function App() {
       </p>
       <br/>
       <Link to="/cartitem">CartItem</Link>
+      <CardProduct image="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" title="React" price="200" id="1" />
     </>
   )
 }
