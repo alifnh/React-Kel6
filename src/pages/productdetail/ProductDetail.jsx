@@ -2,13 +2,15 @@ import React, { useEffect, useState } from 'react';
 import './ProductDetail.css';
 import Header from '../../components/header/Header';
 import axios from 'axios';
+import { useParams } from 'react-router';
 
 const ProductDetail = () => {
   const [productData, setProductData] = useState()
+  const params = useParams()
 
   const fetchProductData = async () => {
     try {
-      const data = await axios.get('http://10.50.0.13:3006/products/3')
+      const data = await axios.get(`http://10.50.0.13:3006/products/${params.id}`)
       setProductData(data.data)
       console.log(data.data)
     }
