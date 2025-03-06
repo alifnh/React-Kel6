@@ -1,0 +1,18 @@
+@import '../../global.css';
+
+.headers{
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+    margin-top: 32px;
+    background-color: orange;
+    padding: 32px;
+    border-radius: 24px;
+}
+
+.product-list{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 100%;
+    gap: 24px;
+}
