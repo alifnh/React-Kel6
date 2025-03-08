@@ -13,7 +13,7 @@ export const CartItem = () => {
 
   const fetchCartData = async () => {
       try {
-        const response = await axios.get(`http://10.50.0.13:3006/cart?userId${userId}`);
+        const response = await axios.get(`http://localhost:3006/cart?userId${userId}`);
         setCart(response.data); 
       } catch (error) {
         console.error(error);
@@ -26,7 +26,7 @@ export const CartItem = () => {
 
   const getProductData = async (id) => {
     try {
-      const response = await axios.get(`http://10.50.0.13:3006/products/${id}`);
+      const response = await axios.get(`http://localhost:3006/products/${id}`);
       return response.data.name;
     }
     catch (error) {

@@ -14,6 +14,7 @@ import Home from './pages/Home.jsx'
 import ProductDetail from './pages/productdetail/ProductDetail.jsx'
 import TambahProduct from './pages/addproduct/TambahProduct.jsx'
 import EditProduct from './pages/editproduct/EditProduct.jsx'
+import ListProductAdmin from './pages/ListProductAdmin.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -29,8 +30,11 @@ createRoot(document.getElementById('root')).render(
           <Route path="/product/:id" element={<ProductDetail/>} />
           <Route path="/product/create" element={<TambahProduct/>}/>
           <Route path="/product/edit/:id" element={<EditProduct />}/>
+          <Route path="/product/list" element={<ListProductAdmin />}/>
         </Routes>
     </BrowserRouter>
     </AppProvider>
   </StrictMode>,
 )
+
+// http://10.50.0.13:3006/

@@ -17,7 +17,7 @@ function Login() {
         
         try {
             
-            const data = await axios.post("http://10.50.0.13:3006/login", {
+            const data = await axios.post("http://localhost:3006/login", {
                 email: values.username,
                 password: values.password
             })
@@ -86,6 +86,7 @@ function Login() {
                     </Button>
                     or <a href="/register">Register now!</a>
                 </Form.Item>
+                as <a href="/">Guest </a>
                 </Form>
             </div>
         </div>

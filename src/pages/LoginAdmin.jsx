@@ -17,7 +17,7 @@ function LoginAdmin() {
         
         try {
             
-            const data = await axios.post("http://10.50.0.13:3006/login", {
+            const data = await axios.post("http://localhost:3006/login", {
                 email: values.username,
                 password: values.password
             })
@@ -32,7 +32,7 @@ function LoginAdmin() {
                 login(data.data.user)
                 localStorage.setItem("accessToken", data.data.accessToken)
                 toast.success("Login successful!");
-                navigate('/product/create');
+                navigate('/product/list');
             } else {
                 throw new Error("Your role not authorized!");
             }
