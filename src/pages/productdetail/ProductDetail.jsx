@@ -11,7 +11,7 @@ const ProductDetail = () => {
 
   const fetchProductData = async () => {
     try {
-      const data = await axios.get(`http://10.50.0.13:3006/products/${params.id}`)
+      const data = await axios.get(`http://localhost:3006/products/${params.id}`)
       setProductData(data.data)
       console.log(data.data)
     }

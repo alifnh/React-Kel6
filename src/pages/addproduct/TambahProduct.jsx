@@ -29,7 +29,7 @@ function TambahProduct() {
         stock: values.stock
       };
 
-      const { data } = await axios.post("http://10.50.0.13:3006/products", requestData, {
+      const { data } = await axios.post("http://localhost:3006/products", requestData, {
         headers: {
             Authorization: `Bearer ${localStorage.getItem("accessToken")}`
         }

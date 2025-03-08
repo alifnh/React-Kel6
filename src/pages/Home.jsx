@@ -6,7 +6,7 @@ import axios from "axios";
 const Home = () => {
     const [products, setProducts] = useState(null);
 
-    const fetchData = async (link = 'http://10.50.0.13:3006/products') => {
+    const fetchData = async (link = 'http://localhost:3006/products') => {
         try {
             console.log(link)
             const data = await axios.get(link)
