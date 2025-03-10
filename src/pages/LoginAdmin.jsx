@@ -32,7 +32,7 @@ function LoginAdmin() {
                 login(data.data.user)
                 localStorage.setItem("accessToken", data.data.accessToken)
                 toast.success("Login successful!");
-                navigate('/product/create');
+                navigate('/product/list');
             } else {
                 throw new Error("Your role not authorized!");
             }
