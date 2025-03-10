@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { Table, InputNumber, Button, Select, Checkbox, Typography, message, Card } from "antd";
-import CardCart from "./components/CardCart";
-import Header from "./components/header/Header";
+import CardCart from "../../components/cardcart/CardCart";
+import Header from "../../components/header/Header";
 
 const { Text } = Typography;
 
@@ -13,7 +13,7 @@ export const CartItem = () => {
 
   const fetchCartData = async () => {
       try {
-        const response = await axios.get(`http://10.50.0.13:3006/cart?userId${userId}`);
+        const response = await axios.get(`http://localhost:3006/cart?userId${userId}`);
         setCart(response.data); 
       } catch (error) {
         console.error(error);
@@ -24,26 +24,16 @@ export const CartItem = () => {
     fetchCartData();
   }, []);
 
-  const getProductData = async (id) => {
-    try {
-      const response = await axios.get(`http://10.50.0.13:3006/products/${id}`);
-      return response.data.name;
-    }
-    catch (error) {
-      console.error(error);
-    }
-  }
-  
 
   return (
     <>
     <Header/>
-      <Card title="Cart Products">
+      <Card title="Cart" >
       {cart == null ? (
         <p>Data sedang dimuat</p>
       ) : (
         cart.map((item, index) =>
-        <CardCart key={index} quantity={item.quantity} name={"Product"} />
+        <CardCart key={index} quantity={item.quantity} id={item.id} style={{marginTop:'50px'}} />
       )
       )}
     </Card>
