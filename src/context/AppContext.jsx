@@ -9,6 +9,7 @@ export const AppProvider = ({ children }) => {
     const login = (userData) => {
         setUser(userData);
         localStorage.setItem("userId", userData.id); // Simpan di localStorage
+        localStorage.setItem("role", userData.role)
     };
 
     const logout = () => {

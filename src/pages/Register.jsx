@@ -18,7 +18,7 @@ function Register() {
         
         try {
             
-            const data = await axios.post("http://10.50.0.13:3006/register", {
+            const data = await axios.post("http://localhost:3006/register", {
                 email: values.username,
                 password: values.password,
                 role: values.role
