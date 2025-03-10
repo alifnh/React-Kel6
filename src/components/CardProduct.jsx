@@ -40,11 +40,14 @@ const CardProduct = (props) => {
                 <Card
                     hoverable
                     style={{
-                    width: 240,
+                    width: 250,
                     }}
                     cover={<img alt="" src={image}/>}
                 >
-                    <Meta title={title} description={`Rp. ${price}`} />
+                <Meta 
+                    title={<span style={{ fontWeight: "Bold (50)", color: "black", fontSize: 20 }}>{title} </span>} 
+                    description={<span style={{ fontWeight: "bold", color: "#E30707", fontSize: "18"}}>Rp. {price}</span>} 
+                    />
                     <Button style={{marginTop: '10px', padding: '10px 50px', color: 'black'}}
                      type="primary"
                      onClick={handleClick}

@@ -36,5 +36,3 @@ createRoot(document.getElementById('root')).render(
     </AppProvider>
   </StrictMode>,
 )
-
-// http://10.50.0.13:3006/

@@ -3,6 +3,7 @@ import './ProductDetail.css';
 import Header from '../../components/header/Header';
 import axios from 'axios';
 import { useParams } from 'react-router';
+import { StarFilled } from "@ant-design/icons";
 
 const ProductDetail = () => {
   const [productData, setProductData] = useState()
@@ -40,25 +41,34 @@ const ProductDetail = () => {
             alt="Product" 
           />
         </div>
-        <div className="product-info">
-          <h1 className="product-title">{productData.name}</h1>
-          <p className="product-price">{productData.price}</p>
-          <div className="button-group">
-          <button 
-                className={`button cart-button ${inCart ? "remove" : "add"}`} 
-                onClick={handleCartClick} // NEW: Tambahkan event onClick
-              >
-                {inCart ? "Remove from Cart" : "Add to Cart"} {/* NEW: Ubah teks tombol */}
-              </button>
-            <button className="button buy-now">Buy it Now</button>
+        <div className="productcontainer">
+          <div className="product-info">
+            <h1 className="product-title">{productData.name}</h1>
+            <p className="product-price">Rp. {productData.price}</p>
+            <div className="product-sales-rating">
+              <span className="sold-text">{productData.sold} 1.237 Sold </span>
+              <span className="rating">
+                <StarFilled style={{ color: "#FFD700", fontSize: "18px" }} /> 
+                <span className="rating-value">{productData.rating} 4.5</span>
+              </span>
+            </div>
+            <div className="divider"></div>
+            <h2 className="product-description-title">Description: </h2>
+            <p className="product-description">{productData.description}</p>
+            <ul className="product-details">
+              <li>Pay over time in interest-free installments with Affirm, Klarna or Afterpay.</li>
+              <li>Join adiClub to get unlimited free standard shipping, returns, & exchanges.</li>
+            </ul>
           </div>
-          <h2 className="product-description-title">About the product</h2>
-          <p className="product-description">{productData.description}</p>
-          <ul className="product-details">
-            <li>This product is excluded from all promotional discounts and offers.</li>
-            <li>Pay over time in interest-free installments with Affirm, Klarna or Afterpay.</li>
-            <li>Join adiClub to get unlimited free standard shipping, returns, & exchanges.</li>
-          </ul>
+          <div className="button-group">
+            <button 
+                  className={`button cart-button ${inCart ? "remove" : "add"}`} 
+                  onClick={handleCartClick} // NEW: Tambahkan event onClick
+                >
+                  {inCart ? "Remove from Cart" : "Add to Cart"} {/* NEW: Ubah teks tombol */}
+                </button>
+              <button className="button buy-now">Buy it Now</button>
+            </div>
         </div>
       </div>
       )

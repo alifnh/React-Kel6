@@ -4,7 +4,7 @@ import { Button, Checkbox, Form, Input, Flex } from 'antd';
 import { useNavigate } from 'react-router'
 import axios from 'axios'
 import toast from 'react-hot-toast';
-import logo from '../assets/tokopdi.png'
+import logo from '../assets/tokopdi1.png'
 import { useAuth } from '../context/AppContext';
 
 
